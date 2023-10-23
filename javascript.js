@@ -1,3 +1,5 @@
+'use strict'
+
 /* 
 1.Виконай додавання 0,1 і 0,2 добийся математично правильної відповіді.
 2.Виконай додавання рядка "1" і цифри 2 (обидві операнди повинні бути в змінних), добийся математично правильної відповіді.
@@ -50,3 +52,13 @@ buttonClear.addEventListener('click' , function(){
     wallet.value = price.value = ''
 })
 // завдання виконано 
+
+const number = () => {  
+const numberPrompt = prompt('Введіть число?');
+const reversedNumber = numberPrompt.toString().split('').reverse().join('');
+alert(`Ваше число (задом наперед) ${ reversedNumber}`)
+}
+
+number();
+// завдання виконано 
+
