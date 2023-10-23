@@ -29,3 +29,24 @@ function flashCard() {
 1.Користувач вводить суму грошей в гаманці і ціну однієї шоколадки. Програма виводить скільки шоколадок може купити користувач і скільки здачі у нього залишиться.
 2.Запитай у користувача тризначне число і виведи його задом наперед. Для вирішення завдання тобі знадобиться оператор % (залишок від ділення). */
 
+const wallet = document.querySelector('.input-wallet');
+const price = document.querySelector('.input-price');
+const countButton = document.querySelector('.btn-primary');
+const alertResult = document.querySelector('.alert');
+const buttonClear = document.querySelector('.btn-danger')
+
+countButton.addEventListener('click', function(){
+    if (wallet.value === '' || price.value === '') {
+        alert('Введіть коректне значення в поле (заповність всі поля,цифри,без пробілів)');
+    } else  {
+        const total = wallet.value / price.value;
+        alertResult.textContent = `На суму ${wallet.value} грн можна купити ${Math.floor(total)} шоколадок/ки`;
+        alertResult.style.display = 'block';
+    }
+})
+
+buttonClear.addEventListener('click' , function(){
+    alertResult.style.display = 'none';
+    wallet.value = price.value = ''
+})
+// завдання виконано 
