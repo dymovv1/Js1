@@ -56,9 +56,31 @@ buttonClear.addEventListener('click' , function(){
 const number = () => {  
 const numberPrompt = prompt('Введіть число?');
 const reversedNumber = numberPrompt.toString().split('').reverse().join('');
-alert(`Ваше число (задом наперед) ${ reversedNumber}`)
+alert(`Ваше число (задом наперед) ${ reversedNumber}`);
 }
 
-number();
+// number();
 // завдання виконано 
 
+// Користувач вводить суму вкладу в банк на 2 місяці, з процентною ставкою депозиту 5% річних. Вивести суму нарахованих відсотків.
+// Що повернуть вирази:
+
+// 2 && 0 && 3
+
+// 2 || 0 || 3
+
+// 2 && 0 || 3
+
+const btnTotal = document.querySelector('.btn-success');
+const inputTotal = document.querySelector('.input-total');
+const alertResultBank = document.querySelector('.alert-primary');
+
+
+btnTotal.addEventListener('click', () => {
+    const depositAmount = parseFloat(inputTotal.value);
+    const monthlyInterestRate = 0.05 / 12;
+    const numberOfMonths = 2;
+    const bankResult = depositAmount * (Math.pow(1 + monthlyInterestRate, numberOfMonths) - 1); 
+    alertResultBank.style.display = 'block';
+    alertResultBank.textContent = `Cума нарахованих відсотків за 2 місяці під 5% річних, буде становити в грошовому еквівалент ${Math.floor(bankResult)} грн.`
+})
